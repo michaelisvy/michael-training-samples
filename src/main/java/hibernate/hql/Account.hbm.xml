@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  	<class name="hibernate.hql.Account" table="T_Account">
+  	  	<id column="id" name="id"/>
+  	  	<property name="cashBalance" />
+  	  	<property name="name" />
+  	  	
+  	  	<set name="portfolios">
+  	  		<key  column="ACCOUNT_ID"/>
+  	  		<one-to-many class="hibernate.hql.Portfolio"/>
+  	  	</set>
+  	  	
+
+  	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  	<class name="hibernate.config.subpackage.Account2" table="T_Account2">
+  	  	<id column="id" name="id"/>
+  	  	<property name="cashBalance" />
+  	  	<property name="name" />
+
+  	</class>
+</hibernate-mapping>
