@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="element1" class="config.xml.collections.Element1" />
+	<bean id="element2" class="config.xml.collections.Element2" />
+
+	<bean id="bankService" class="config.xml.collections.BankService">
+		<property name="elementList">
+			<list>
+				<ref bean="element1" />
+				<ref bean="element2" />
+			</list>
+		</property>
+		<property name="elementSet">
+			<list>
+				<ref bean="element1" />
+				<ref bean="element2" />
+			</list>
+		</property>
+		<property name="properties">
+			<value>
+				server.host=mailer
+				server.port=1010
+			</value>
+		</property>
+	</bean>
+
+</beans>

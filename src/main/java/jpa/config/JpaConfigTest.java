@@ -25,7 +25,7 @@ public class JpaConfigTest {
 	@Test
 	public void retrieveAccounts() {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		Query query = entityManager.createQuery("from Account a where a.id=:id").setParameter("id", 1L);
+		Query query = entityManager.createQuery("from ClientService a where a.id=:id").setParameter("id", 1L);
 		Account a1 = (Account) query.getSingleResult();
 		Assert.assertEquals(a1.getId(), 1);
 	}

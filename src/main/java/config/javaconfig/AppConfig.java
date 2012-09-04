@@ -14,7 +14,7 @@ public class AppConfig {
 		clientService.setClientDao(clientDao());
 		return clientService;
 	}
-	@Bean 
+	@Bean
 	public ClientService clientService2() {
 		ClientServiceImpl clientService = new ClientServiceImpl();
 		clientService.setClientDao(clientDao());

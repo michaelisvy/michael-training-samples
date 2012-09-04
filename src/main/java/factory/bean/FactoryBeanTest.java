@@ -35,9 +35,16 @@ public class FactoryBeanTest {
 	 */
 	@Test
 	public void factoryBeanAvailableTest() throws Exception {
-		ClientServiceFactoryBean factory = applicationContext.getBean(ClientServiceFactoryBean.class);
+		ClientServicePrototypeFactoryBean factory = applicationContext.getBean(ClientServicePrototypeFactoryBean.class);
 		ClientService clientService = factory.getObject();
 		Assert.assertNotNull(clientService);
+	}
+	
+	@Test
+	public void multipleInstancesTest() {
+		ClientService clientService1 = applicationContext.getBean(ClientService.class);
+		ClientService clientService2 = applicationContext.getBean(ClientService.class);
+		Assert.assertNotSame(clientService1, clientService2);
 	}
 
 }

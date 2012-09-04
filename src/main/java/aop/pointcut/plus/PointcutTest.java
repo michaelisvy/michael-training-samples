@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @ContextConfiguration(locations = "application-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class PointcutTest {
+public class PointcutTest { 
 	@Autowired 
 	private ServiceInterface serviceInterface;
 	
