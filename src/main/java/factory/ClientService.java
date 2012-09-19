@@ -14,7 +14,7 @@ public class ClientService {
 	}
 
 	public void findClient(@RequestParam String string) {
-		System.out.println("**** test");
+		System.out.println("**** test.mock");
 	}
 
 }

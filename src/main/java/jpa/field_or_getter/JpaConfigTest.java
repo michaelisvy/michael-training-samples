@@ -1,4 +1,4 @@
-package jpa.config;
+package jpa.field_or_getter;
 
 
 import javax.persistence.EntityManager;
@@ -27,7 +27,7 @@ public class JpaConfigTest {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		Query query = entityManager.createQuery("from Account a where a.id=:id").setParameter("id", 1L);
 		Account a1 = (Account) query.getSingleResult();
-		Assert.assertEquals(a1.getId(), 1);
+		Assert.assertEquals(a1.id, 1);
 	}
 
 }

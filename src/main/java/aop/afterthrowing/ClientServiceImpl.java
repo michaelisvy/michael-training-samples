@@ -5,7 +5,7 @@ import org.springframework.dao.DataAccessResourceFailureException;
 
 class ClientServiceImpl implements ClientService {
 	public void findClient(String string) {
-		throw new DataAccessResourceFailureException("this is a test exception") { 
+		throw new DataAccessResourceFailureException("this is a test.mock exception") { 
 		};
 	}
 

@@ -20,7 +20,7 @@ public class PostConstructTest {
 	 */
 	@Test
 	public void dependencyInjectionTest() {
-		System.out.println("test completed");
+		System.out.println("test.mock completed");
 	}
 
 }

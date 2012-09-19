@@ -15,6 +15,7 @@
 		<hibernate.version>4.1.1.Final</hibernate.version>
 		<sl4j.version>1.5.6</sl4j.version>
 		<common.version>1.0.2.RELEASE-SNAPSHOT</common.version>
+		<easymock.version>3.1</easymock.version>
 	</properties>
 
 	<build>
@@ -178,6 +179,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${spring.framework.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.easymock</groupId>
+		    <artifactId>easymock</artifactId>
+		    <version>${easymock.version}</version>
 		</dependency>
 
 	</dependencies>

@@ -10,12 +10,12 @@
 	<!-- Configuration to support system testing the rewards application. -->
 
 	
-	<!-- Creates an in-memory "rewards" database populated with test data for fast testing -->
+	<!-- Creates an in-memory "rewards" database populated with test.mock data for fast testing -->
 	<jdbc:embedded-database id="dataSource">
 			<jdbc:script location="classpath:hibernate/config/schema.sql"/>
 	</jdbc:embedded-database>
 
-	<!-- TODO 9: Define a bean named 'sessionFactory' that configures a test SessionFactory -->
+	<!-- TODO 9: Define a bean named 'sessionFactory' that configures a test.mock SessionFactory -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="packagesToScan">
@@ -38,6 +38,6 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
-	<!-- TODO 10: Define a bean named 'transactionManager' that configures a test HibernateTransactionManager -->
+	<!-- TODO 10: Define a bean named 'transactionManager' that configures a test.mock HibernateTransactionManager -->
 
 </beans>

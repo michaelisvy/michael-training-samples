@@ -7,7 +7,6 @@
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
-		<config>src/main/java/test/application-config.xml</config>
 		<config>src/main/java/aop/pointcut/application-config.xml</config>
 		<config>src/main/java/hibernate/hql/application-config.xml</config>
 		<config>src/main/java/importtag/application-config.xml</config>
