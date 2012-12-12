@@ -1,19 +1,17 @@
 package jdbc.rowcallbackhandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class AccountDao {
 	@Autowired
-	private SimpleJdbcTemplate simpleJdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	
 	public void processAccount(long accountId) {
 		String query = "select id, cashBalance, name from T_ACCOUNT where id=?";
 		AccountCallbackHandler handler = new AccountCallbackHandler();
-		JdbcOperations jdbcOperations = simpleJdbcTemplate.getJdbcOperations();
 		Object[] args = new Object[] {accountId};
-		jdbcOperations.query(query, args, handler);
+		jdbcTemplate.query(query, args, handler);
 	}
 }

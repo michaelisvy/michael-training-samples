@@ -24,5 +24,7 @@
 		<constructor-arg ref="dataSource"/>
 	</bean>
 	
-	<bean class="jdbc.rowmapper.AccountDao" id="accountDao"/>
+	<bean class="jdbc.exceptions.JdbcTemplateAccountDao" id="jdbcTemplateAccountDao"/>
+	
+	<bean class="jdbc.exceptions.PlainJdbcAccountDao" id="plainJdbcAccountDao"/>
 </beans>
