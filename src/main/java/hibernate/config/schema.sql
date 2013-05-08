@@ -1,8 +1,8 @@
 drop table T_PORTFOLIO_T_POSITION if exists
 drop table T_POSITION_T_TRADE if exists
 drop table T_ORDER if exists
-drop table T_ACCOUNT if exists
 drop table T_PORTFOLIO if exists
+drop table T_ACCOUNT if exists
 drop table T_POSITION if exists
 drop table T_TRADE if exists
 drop table T_ACCOUNT2 if exists

@@ -5,6 +5,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
+import jpa.Account;
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -14,7 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="infra-config.xml")
+@ContextConfiguration(locations="classpath:jpa/infra-config.xml")
 public class JpaConfigTest {
 	
 	@Autowired
