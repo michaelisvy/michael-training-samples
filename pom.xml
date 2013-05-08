@@ -17,6 +17,7 @@
 		<easymock.version>3.1</easymock.version>
 		<junit.version>4.11</junit.version>
 		<aspectj.version>1.7.2</aspectj.version>
+		<hsqldb.version>2.2.9</hsqldb.version>
 	</properties>
 
 	<build>
@@ -119,7 +120,7 @@
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>1.8.0.10</version>
+			<version>${hsqldb.version}</version>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
