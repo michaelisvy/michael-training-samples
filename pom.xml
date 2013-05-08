@@ -4,18 +4,20 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.springsource.training.module</groupId>
-	<artifactId>container-4-solution</artifactId>
-	<version>2.0.1.RELEASE</version>
+	<artifactId>michael-training-samples</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>essais</name>
+	<name>michael-training-samples</name>
 
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring.framework.version>3.1.1.RELEASE</spring.framework.version>
-		<hibernate.version>4.1.1.Final</hibernate.version>
-		<sl4j.version>1.5.6</sl4j.version>
+		<spring.framework.version>3.2.2.RELEASE</spring.framework.version>
+		<hibernate.version>4.2.1.Final</hibernate.version>
+		<sl4j.version>1.7.5</sl4j.version>
 		<common.version>1.0.2.RELEASE-SNAPSHOT</common.version>
 		<easymock.version>3.1</easymock.version>
+		<junit.version>4.11</junit.version>
+		<aspectj.version>1.7.2</aspectj.version>
 	</properties>
 
 	<build>
@@ -42,19 +44,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-		<repository>
-			<id>repo1</id>
-			<name>repo1</name>
-			<url>http://repo1.maven.org/maven2/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<!-- ********************************************************************** 
@@ -89,12 +78,13 @@
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.6.8</version>
+			<version>${aspectj.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.6.8</version>
+			<version>${aspectj.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 
 		<!-- ********************************************************************** 
@@ -114,8 +104,9 @@
 		</dependency>
 
 
-		<!-- ********************************************************************** 
-			** OTHER DEPENDENCIES ** ********************************************************************** -->
+		<!-- 	********************************************************************** 
+				** 				OTHER DEPENDENCIES 									** 
+				********************************************************************** -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-jcl</artifactId>
@@ -133,18 +124,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.transaction</groupId>
-			<artifactId>jta</artifactId>
-			<version>1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
-			<version>1.1.1</version> </dependency> -->
-		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.14</version>
@@ -156,13 +135,6 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
-			<scope>runtime</scope>
-		</dependency>
-
 		<!-- ********************************************************************** 
 			** TEST DEPENDENCIES 
 		** ********************************************************************** -->
@@ -171,7 +143,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit
 				</artifactId>
-			<version>4.10</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 
