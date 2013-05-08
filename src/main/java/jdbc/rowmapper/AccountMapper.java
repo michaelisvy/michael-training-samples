@@ -20,7 +20,6 @@ public class AccountMapper implements RowMapper<Account>{
 		account.setCashBalance(rs.getDouble("cashBalance"));
 		account.setName(rs.getString("name"));
 		 */
-		
 		return account;
 	}
 

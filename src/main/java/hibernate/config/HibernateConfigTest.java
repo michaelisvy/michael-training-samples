@@ -33,7 +33,7 @@ public class HibernateConfigTest {
 	private void retrieveAccounts(ConfigurableApplicationContext applicationContext) {
 		SessionFactory factory = applicationContext.getBean(SessionFactory.class);
 		Session session = factory.openSession();
-		Query query = session.createQuery("from ClientService a where a.id=:id").setInteger("id", 1);
+		Query query = session.createQuery("from Account a where a.id=:id").setInteger("id", 1);
 		Account a1 = (Account) query.uniqueResult();
 		Query query2 = session.createQuery("from Account2 a where a.id=:id").setInteger("id", 1);
 		Account2 a2 = (Account2) query2.uniqueResult();
