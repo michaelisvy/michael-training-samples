@@ -11,7 +11,7 @@
 
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring.framework.version>3.2.2.RELEASE</spring.framework.version>
+		<spring.framework.version>4.1.1.RELEASE</spring.framework.version>
 		<hibernate.version>4.2.1.Final</hibernate.version>
 		<sl4j.version>1.7.5</sl4j.version>
 		<easymock.version>3.1</easymock.version>
