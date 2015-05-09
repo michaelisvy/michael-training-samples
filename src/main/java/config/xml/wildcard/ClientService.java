@@ -1,6 +1,5 @@
 package config.xml.wildcard;
 
-import org.springframework.web.bind.annotation.RequestParam;
 
 public class ClientService {
 	private ClientDao clientDao;
