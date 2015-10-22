@@ -1,12 +1,9 @@
 package java8.interfaces;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import org.junit.Test;
 
 public class Repository1Test {
 	
-	private Repository1 repo = new Repository1() {
+	/*private Repository1 repo = new Repository1() {
 	};
 
 	@Test
@@ -19,6 +16,6 @@ public class Repository1Test {
 	public void shouldCallADefaultMethodInsideAnInterface() {
 		String name = repo.getName();
 		assertThat(name).isEqualTo("Edmond");
-	}
+	}*/
 
 }
