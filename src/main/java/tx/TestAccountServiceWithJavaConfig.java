@@ -12,11 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
-@ContextConfiguration(locations="application-config.xml")
+@ContextConfiguration(classes = ApplicationConfig.class)
 @RunWith(SpringJUnit4ClassRunner.class)
-public class TestAccountService {
-	private static final Logger logger = Logger.getLogger(TestAccountService.class);
-	
+public class TestAccountServiceWithJavaConfig {
+
 	@Autowired
 	private AccountService accountService;
 	
