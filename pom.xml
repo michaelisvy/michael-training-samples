@@ -11,13 +11,8 @@
 
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring.framework.version>4.1.6.RELEASE</spring.framework.version>
-		<hibernate.version>4.2.1.Final</hibernate.version>
-		<sl4j.version>1.7.12</sl4j.version>
+		<spring-io-platform.version>2.0.0.RELEASE</spring-io-platform.version>
 		<easymock.version>3.1</easymock.version>
-		<junit.version>4.12</junit.version>
-		<aspectj.version>1.7.2</aspectj.version>
-		<hsqldb.version>2.2.9</hsqldb.version>
 		<assertj.version>3.0.0</assertj.version>
 	</properties>
 
@@ -26,75 +21,58 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.8</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<sourceIncludes>
-						<sourceInclude>**/*.*</sourceInclude>
-					</sourceIncludes>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+
 	</build>
+
+	<dependencyManagement>
+		<!-- Import the maven Spring IO Platform Bill Of Materials (BOM) -->
+		<dependencies>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>${spring-io-platform.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<!-- ********************************************************************** 
 			** SPRING DEPENDENCIES ** ********************************************************************** -->
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>${spring.framework.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId>
-			<version>${spring.framework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>${spring.framework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.framework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<version>${spring.framework.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
 
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${aspectj.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectj.version}</version>
-			<scope>runtime</scope>
-		</dependency>
 
 		<!-- ********************************************************************** 
 			** HIBERNATE DEPENDENCIES ** ********************************************************************** -->
 
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 		<!-- JSR 330 -->
@@ -108,31 +86,15 @@
 		<!-- 	********************************************************************** 
 				** 				OTHER DEPENDENCIES 									** 
 				********************************************************************** -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jcl</artifactId>
-			<version>${sl4j.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${sl4j.version}</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>${hsqldb.version}</version>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.2.126</version>
 		</dependency>
 
 
@@ -144,8 +106,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit
 				</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 		
 		<dependency>
@@ -157,7 +118,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.framework.version}</version>
 		</dependency>
 		
 		<dependency>
@@ -167,4 +127,5 @@
 		</dependency>
 
 	</dependencies>
+
 </project>

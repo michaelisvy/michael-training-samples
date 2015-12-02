@@ -3,13 +3,13 @@ package tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
 import domain.Account;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class AccountDao2 {
 	@Autowired @Qualifier("jdbcTemplate2")
-	private SimpleJdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	
 	public Account findAccount(long accountId) {
