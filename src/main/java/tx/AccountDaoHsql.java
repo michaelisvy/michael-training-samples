@@ -8,8 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AccountDao1 {
-	@Autowired @Qualifier("jdbcTemplate1")
+public class AccountDaoHsql {
+	@Autowired @Qualifier("jdbcTemplateHsql")
 	private JdbcTemplate jdbcTemplate;
 
 	

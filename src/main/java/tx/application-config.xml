@@ -14,28 +14,19 @@
 	<tx:annotation-driven/>
 
 
-	<!-- DataSource 1-->
+	<!-- DataSource HSQL-->
 
-	<bean id="transactionManager1" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource1"/>
+	<bean id="transactionManagerHsql" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceHsql"/>
 	</bean>
-	<bean id="jdbcTemplate1" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg ref="dataSource1"/>
+	<bean id="jdbcTemplateHsql" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg ref="dataSourceHsql"/>
 	</bean>
-	<jdbc:embedded-database id="dataSource1" type="HSQL">
+	<jdbc:embedded-database id="dataSourceHsql" type="HSQL">
 		<jdbc:script location="classpath:database/schema.sql" />
 	</jdbc:embedded-database>
 
 
-	<!-- DataSource 2-->
-	<bean id="transactionManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource2"/>
-	</bean>
-	<bean id="jdbcTemplate2" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg ref="dataSource2"/>
-	</bean>
-	<jdbc:embedded-database id="dataSource2" type="H2">
-		<jdbc:script location="classpath:database/schema-empty.sql" />
-	</jdbc:embedded-database>
+
 
 </beans>
