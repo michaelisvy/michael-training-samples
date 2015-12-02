@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import domain.Account;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class AccountDao2 {
 	@Autowired @Qualifier("jdbcTemplate2")
 	private JdbcTemplate jdbcTemplate;
