@@ -8,11 +8,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class AccountDaoHsql {
-	@Autowired @Qualifier("jdbcTemplateHsql")
+public class AccountDao {
 	private JdbcTemplate jdbcTemplate;
 
-	
+	public AccountDao(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+
 	public Account findAccount(long accountId) {
 		String query = "select id, cashBalance, name from T_ACCOUNT where id=?";
 		AccountMapper mapper = new AccountMapper();

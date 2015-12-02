@@ -6,11 +6,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AccountService {
-	@Autowired
-	private AccountDaoHsql accountDao;
-	
+	private AccountDao accountDao;
 
-	@Transactional
+    public AccountService(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
+
+    @Transactional
 	public void updateAccount(long newBalance, long accountId) {
         accountDao.updateAccount(newBalance, accountId);
 	}

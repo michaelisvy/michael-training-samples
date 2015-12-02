@@ -21,7 +21,7 @@ public class TestAccountService {
 	private AccountService accountService;
 	
 	@Autowired
-	private AccountDaoHsql accountDao1;
+	private AccountDao accountDao1;
 	
 
 	
