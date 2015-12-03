@@ -1,4 +1,4 @@
-package annotations.config;
+package config.annotations.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

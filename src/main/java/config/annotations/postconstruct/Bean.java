@@ -1,4 +1,4 @@
-package annotations.postconstruct;
+package config.annotations.postconstruct;
 
 import javax.annotation.PostConstruct;
 

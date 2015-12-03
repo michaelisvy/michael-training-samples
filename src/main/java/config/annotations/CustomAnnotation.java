@@ -1,4 +1,4 @@
-package annotations;
+package config.annotations;
 
 import javax.annotation.Resource;
 

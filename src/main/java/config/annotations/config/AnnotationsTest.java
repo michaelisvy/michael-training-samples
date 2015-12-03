@@ -1,4 +1,4 @@
-package annotations.config;
+package config.annotations.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

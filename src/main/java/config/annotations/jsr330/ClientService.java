@@ -1,4 +1,4 @@
-package annotations.jsr330;
+package config.annotations.jsr330;
 
 import javax.inject.Inject;
 import javax.inject.Named;

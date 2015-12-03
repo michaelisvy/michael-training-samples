@@ -1,0 +1,5 @@
+package config.annotations.jsr330;
+
+public interface ClientDao {
+
+}
