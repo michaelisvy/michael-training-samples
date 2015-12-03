@@ -9,18 +9,18 @@
 	<configs>
 		<config>src/main/java/aop/pointcut/application-config.xml</config>
 		<config>src/main/java/hibernate/hql/application-config.xml</config>
-		<config>src/main/java/importtag/application-config.xml</config>
+		<config>src/main/java/config.xml.importtag/application-config.xml</config>
 		<config>src/main/java/jdbc/rowcallbackhandler/application-config.xml</config>
 		<config>src/main/java/jdbc/rowmapper/application-config.xml</config>
 		<config>src/main/java/properties/application-config.xml</config>
 		<config>src/main/java/tx/application-config.xml</config>
-		<config>src/main/java/importtag/classpath-config.xml</config>
+		<config>src/main/java/config.xml.importtag/classpath-config.xml</config>
 		<config>src/main/java/hibernate/config/config-1-annotatedClasses.xml</config>
 		<config>src/main/java/hibernate/config/config-2-packagesToScan.xml</config>
 		<config>src/main/java/hibernate/config/config-3-hybrid.xml</config>
 		<config>src/main/java/factory/bean/factorybean-config.xml</config>
 		<config>src/main/java/factory/method/factorymethod-config.xml</config>
-		<config>src/main/java/importtag/sub/sub-file.xml</config>
+		<config>src/main/java/config.xml.importtag/sub/sub-file.xml</config>
 		<config>src/main/java/annotations/config/annotations-config.xml</config>
 		<config>src/main/java/id/client-service-config.xml</config>
 		<config>src/main/java/annotations/postconstruct/beans.xml</config>

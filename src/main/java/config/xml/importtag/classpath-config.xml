@@ -3,6 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<import resource="classpath:importtag/sub/sub-file.xml"/>
+	<import resource="classpath:config/xml/importtag/sub/sub-file.xml"/>
 
 </beans>
