@@ -1,0 +1,19 @@
+# all profiles
+logging.level:
+    org.springframework: INFO
+    org.hibernate: WARN
+
+
+---
+# profile "injectedValue" only
+spring.profiles: injectedValue
+
+customproperty: customPropValue
+
+---
+# profile "daoConfig" only
+spring:
+  profiles: daoConfig
+
+  datasource:
+    schema: classpath:/database/schema.sql
