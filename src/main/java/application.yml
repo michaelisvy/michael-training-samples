@@ -5,8 +5,8 @@ logging.level:
 
 
 ---
-# profile "injectedValue" only
-spring.profiles: injectedValue
+# profile "injectedProperty" only
+spring.profiles: injectedProperty
 
 customproperty: customPropValue
 
