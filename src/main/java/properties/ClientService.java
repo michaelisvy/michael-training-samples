@@ -3,16 +3,13 @@ package properties;
 
 public class ClientService {
 	
-	private String dbName;
+	private String dogName;
 
-	public String getDbName() {
-		return dbName;
+	public String getDogName() {
+		return dogName;
 	}
 
-	public void setDbName(String dbName) {
-		this.dbName = dbName;
+	public void setDogName(String dogName) {
+		this.dogName = dogName;
 	}
-	
-	
-
 }

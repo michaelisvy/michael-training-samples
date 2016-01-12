@@ -2,6 +2,7 @@ package properties;
 
 import java.util.Properties;
 
+import static org.assertj.core.api.Assertions.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @ContextConfiguration(locations = "application-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class PropertiesTest {
+public class UtilPropertiesXmlTest {
 	@Autowired
 	private ClientService clientService;
 	
@@ -20,13 +21,13 @@ public class PropertiesTest {
 	private Properties properties;
 
 	@Test
-	public void hello() {
-		System.out.println(properties);
+	public void shouldRetrievePropertyFromProperties() {
+		assertThat(properties.getProperty("asterix")).isEqualTo("idefix");
 	}
 	
 	@Test
-	public void utilProp() {
-		System.out.println(clientService.getDbName());
+	public void shouldRetrievePropertyFromBean() {
+		assertThat(clientService.getDogName()).isEqualTo("milou");
 	}
 
 }

@@ -12,17 +12,12 @@
  
   
   <util:properties id="myProp">
-  	<prop key="DA1">da</prop>
-  	<prop key="DO">do</prop>
-  </util:properties>
-  
-   <util:properties id="myProp2">
-  	<prop key="DA2">da</prop>
-  	<prop key="DO">do</prop>
+  	<prop key="tintin">milou</prop>
+  	<prop key="asterix">idefix</prop>
   </util:properties>
   
   <bean class="properties.ClientService">
-  	<property name="dbName" value="#{myProp.DA1}"/>
+  	<property name="dogName" value="#{myProp.tintin}"/>
   </bean>
   
 
