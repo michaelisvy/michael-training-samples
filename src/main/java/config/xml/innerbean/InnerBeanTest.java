@@ -3,7 +3,7 @@ package config.xml.innerbean;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -12,14 +12,15 @@ public class InnerBeanTest {
 
 	@Test 
 	public void getTopLevelBeanDefinition(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
+		ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		applicationContext.getBean(BankService.class);
+		applicationContext.close();
 		
 	}
 	
 	@Test 
 	public void getInnerBeanDefinition(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
+	    ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		try {
 			applicationContext.getBean(BankRepository.class);
 			Assert.fail("definition should not be available");
@@ -27,12 +28,15 @@ public class InnerBeanTest {
 		} catch (NoSuchBeanDefinitionException e) {
 			// expected
 		}
+		finally {
+		    applicationContext.close();
+		}
 		
 	}
 	
 	@Test 
 	public void getInnerBeanDefinitionByName(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
+	    ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		try {
 			applicationContext.getBean("bankRepository");
 			Assert.fail("definition should not be available");
@@ -40,6 +44,9 @@ public class InnerBeanTest {
 		} catch (NoSuchBeanDefinitionException e) {
 			// expected
 		}
+		finally {
+            applicationContext.close();
+        }
 		
 	}
 	

@@ -1,7 +1,7 @@
 package config.xml.collections;
 
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -10,11 +10,12 @@ public class CollectionsTest {
 
 	@Test 
 	public void getTopLevelBeanDefinition(){
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
+	    ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		BankService bankService = applicationContext.getBean(BankService.class);
 		System.out.println(bankService.getElementList().getClass());
 		System.out.println(bankService.getElementSet().getClass());
 		System.out.println(bankService.getProperties());
+		applicationContext.close();
 		
 	}
 	

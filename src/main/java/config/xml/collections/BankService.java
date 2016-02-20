@@ -7,7 +7,7 @@ import java.util.Set;
 public class BankService {
 	private List<Object> elementList;
 	
-	private Set elementSet;
+	private Set <Element> elementSet;
 	
 	private java.util.Properties properties;
 
@@ -29,11 +29,11 @@ public class BankService {
 		this.elementList = elementList;
 	}
 
-	public Set getElementSet() {
+	public Set<Element> getElementSet() {
 		return elementSet;
 	}
 
-	public void setElementSet(Set elementSet) {
+	public void setElementSet(Set<Element> elementSet) {
 		this.elementSet = elementSet;
 	}
 	

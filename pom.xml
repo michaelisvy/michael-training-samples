@@ -14,20 +14,10 @@
 		<spring-io-platform.version>2.0.0.RELEASE</spring-io-platform.version>
 		<easymock.version>3.1</easymock.version>
 		<assertj.version>3.0.0</assertj.version>
+		<java.version>1.8</java.version>
 	</properties>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
@@ -54,21 +44,23 @@
 
 	<dependencies>
 		<!-- ********************************************************************** 
-			** SPRING DEPENDENCIES ** ********************************************************************** -->
+			 **                      SPRING DEPENDENCIES                         ** 
+			 ********************************************************************** -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
 
 
 
-		<!-- ********************************************************************** 
-			** HIBERNATE DEPENDENCIES ** ********************************************************************** -->
+		<!--********************************************************************** 
+			**                   HIBERNATE DEPENDENCIES                         ** 
+			********************************************************************** -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,7 +71,6 @@
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-			<version>1</version>
 		</dependency>
 
 
@@ -97,29 +88,23 @@
 		<!-- ********************************************************************** 
 			** TEST DEPENDENCIES 
 		** ********************************************************************** -->
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit
-				</artifactId>
-			<scope>compile</scope>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
 			<version>${assertj.version}</version>
 		</dependency>	
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-		</dependency>
 		
 		<dependency>
 		    <groupId>org.easymock</groupId>
 		    <artifactId>easymock</artifactId>
 		    <version>${easymock.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path-assert</artifactId>
+		    <scope>test</scope>
 		</dependency>
 
 	</dependencies>

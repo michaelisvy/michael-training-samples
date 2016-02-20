@@ -9,12 +9,14 @@ public class ImportTagTest {
 	
 	@Test
 	public void importTest() {
-		new ClassPathXmlApplicationContext("/config/xml/importtag/application-config.xml");
+	    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/config/xml/importtag/application-config.xml");
+	    context.close();
 	}
 	
 	@Test
 	public void classpathTest() {
-		new ClassPathXmlApplicationContext("/config/xml/importtag/classpath-config.xml");
+	    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/config/xml/importtag/classpath-config.xml");
+	    context.close();
 	}
 
 }
