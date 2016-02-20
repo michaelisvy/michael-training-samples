@@ -28,7 +28,6 @@ public class ExceptionsTest {
 			Assert.fail("was expecting a bad sql grammar exception");
 		} catch (BadSqlGrammarException e) {
 			// Expected
-			e.printStackTrace();
 		}		
 	}
 	
@@ -38,8 +37,7 @@ public class ExceptionsTest {
 			plainJdbcAccountDao.findAccount(1);
 			Assert.fail("was expecting an exception");
 		} catch (SQLException e) {
-			e.printStackTrace();
-			System.out.println("error code: " + e.getErrorCode());
+		 // Expected
 		}		
 	}
 	

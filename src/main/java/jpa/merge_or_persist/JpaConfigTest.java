@@ -48,7 +48,6 @@ public class JpaConfigTest {
 		}
 		catch(PersistenceException e) {
 			// nothing here, expected behaviour
-			e.printStackTrace();
 		}
 		
 	}
