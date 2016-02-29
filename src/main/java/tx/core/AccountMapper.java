@@ -1,4 +1,4 @@
-package tx;
+package tx.core;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

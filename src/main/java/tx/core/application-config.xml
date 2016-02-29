@@ -9,16 +9,16 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="tx" />
+	<context:component-scan base-package="tx.core" />
 	
 	<tx:annotation-driven/>
 
 
-	<bean id="accountService" class="tx.AccountService">
+	<bean id="accountService" class="tx.core.AccountService">
 		<constructor-arg ref="accountDao" />
 	</bean>
 
-	<bean id="accountDao" class="tx.AccountDao">
+	<bean id="accountDao" class="tx.core.AccountDao">
 		<constructor-arg ref="jdbcTemplate" />
 	</bean>
 

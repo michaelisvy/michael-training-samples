@@ -1,4 +1,4 @@
-package tx;
+package tx.core;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -11,9 +11,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-@ContextConfiguration(classes = ApplicationConfig.class)
+@ContextConfiguration(locations="application-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
-public class TestAccountServiceWithJavaConfig {
+public class TestAccountServiceWithXml {
 
 	@Autowired
 	private AccountService accountService;

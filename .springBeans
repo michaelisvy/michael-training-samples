@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.2.0.201303060654-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.7.2.201511260958-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/java/aop/pointcut/application-config.xml</config>
-		<config>src/main/java/hibernate/hql/application-config.xml</config>
-		<config>src/main/java/config.xml.importtag/application-config.xml</config>
 		<config>src/main/java/jdbc/rowcallbackhandler/application-config.xml</config>
 		<config>src/main/java/jdbc/rowmapper/application-config.xml</config>
 		<config>src/main/java/properties/application-config.xml</config>
-		<config>src/main/java/tx/application-config.xml</config>
-		<config>src/main/java/config.xml.importtag/classpath-config.xml</config>
-		<config>src/main/java/hibernate/config/config-1-annotatedClasses.xml</config>
-		<config>src/main/java/hibernate/config/config-2-packagesToScan.xml</config>
-		<config>src/main/java/hibernate/config/config-3-hybrid.xml</config>
 		<config>src/main/java/factory/bean/factorybean-config.xml</config>
 		<config>src/main/java/factory/method/factorymethod-config.xml</config>
-		<config>src/main/java/config.xml.importtag/sub/sub-file.xml</config>
-		<config>src/main/java/config.annotations/config/config.annotations-config.xml</config>
 		<config>src/main/java/id/client-service-config.xml</config>
-		<config>src/main/java/config.annotations/postconstruct/beans.xml</config>
-		<config>src/main/java/config.annotations/jsr330/config.annotations-config.xml</config>
-		<config>src/main/java/javaconfig/config.annotations-config.xml</config>
 		<config>src/main/java/aop/afterthrowing/application-config.xml</config>
 		<config>src/main/java/aop/pointcut/plus/application-config.xml</config>
 		<config>src/main/java/config/xml/cp/namespaces/application-config.xml</config>
@@ -36,7 +24,11 @@
 		<config>src/main/java/config/xml/collections/application-config.xml</config>
 		<config>src/main/java/config/xml/spel/application-config.xml</config>
 		<config>src/main/java/jpa/infra-config.xml</config>
+		<config>src/main/java/tx/core/application-config.xml</config>
 	</configs>
+	<autoconfigs>
+		<config>java:boot.ApplicationConfig</config>
+	</autoconfigs>
 	<configSets>
 	</configSets>
 </beansProjectDescription>

@@ -1,4 +1,4 @@
-package jpa.config;
+package jpa.simpleJavaConfig;
 
 
 import javax.persistence.EntityManager;
@@ -14,8 +14,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations="classpath:jpa/infra-config.xml")
-public class JpaConfigTest {
+@ContextConfiguration(classes=ApplicationConfig.class)
+public class JpaWithJavaConfigTest {
 	
 	@PersistenceContext
 	private EntityManager entityManager;
