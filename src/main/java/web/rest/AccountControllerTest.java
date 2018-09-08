@@ -54,7 +54,7 @@ public class AccountControllerTest {
             actions.andExpect(jsonPath(".id").value(12));   
             fail("should have failed because there is no @ResponseBody annotation");
         }
-        catch(Exception e) {
+        catch(Throwable t) {
             // expected. No annotation => responsebody not parsed
         }
 }
