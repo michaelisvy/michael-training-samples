@@ -1,4 +1,4 @@
-package java8.interfaces;
+package java8.a_interfaces;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
