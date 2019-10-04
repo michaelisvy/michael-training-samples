@@ -4,7 +4,11 @@ import org.junit.Test;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -40,6 +44,17 @@ public class CollectionsTest {
         List<Person> filteredList =  stream.collect(Collectors.toList());
 
         filteredList.forEach(p -> assertThat(p.getFirstName()).startsWith("J"));
+    }
 
+    @Test
+    public void shouldUseMapEntry() {
+        Map<String,String> customersMap= new HashMap<>();
+        customersMap.put("001", "John");
+        customersMap.put("002", "Sam");
+        customersMap.put("003", "Peter");
+
+        Map.Entry entry = customersMap.entrySet().iterator().next();
+        assertThat(entry.getKey()).isEqualTo("001");
+        assertThat(entry.getValue()).isEqualTo("John");
     }
 }
