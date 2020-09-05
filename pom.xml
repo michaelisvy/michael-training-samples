@@ -10,11 +10,9 @@
 	<name>michael-training-samples</name>
 
 	<properties>
-		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-<!--		<spring-io-platform.version>Cairo-RELEASE</spring-io-platform.version>-->
 		<easymock.version>3.6</easymock.version>
-<!--		<assertj.version>3.11.1</assertj.version>-->
 		<java.version>1.8</java.version>
+		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 	</properties>
 
 	<build>
@@ -61,44 +59,30 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
+		<!-- **********************************************************************
+			** TEST DEPENDENCIES
+		** ********************************************************************** -->
+
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>${easymock.version}</version>
+		</dependency>
+
+		<!-- 	********************************************************************** 
+				** 				OTHER DEPENDENCIES 									** 
+				********************************************************************** -->
+
 		<!-- JSR 330 -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
 		</dependency>
 
-
-		<!-- 	********************************************************************** 
-				** 				OTHER DEPENDENCIES 									** 
-				********************************************************************** -->
-
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-
-
-		<!-- ********************************************************************** 
-			** TEST DEPENDENCIES 
-		** ********************************************************************** -->
-		
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj.version}</version>
-		</dependency>	
-		
-		<dependency>
-		    <groupId>org.easymock</groupId>
-		    <artifactId>easymock</artifactId>
-		    <version>${easymock.version}</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.jayway.jsonpath</groupId>
-		    <artifactId>json-path-assert</artifactId>
-		    <scope>test</scope>
 		</dependency>
 
 		<dependency>
