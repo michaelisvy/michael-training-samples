@@ -2,15 +2,16 @@ package boot;
 
 
 import domain.Account;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class AccountDao {
+@Repository("bootAccoutDao")
+public class BootAccountDao {
 	private JdbcTemplate jdbcTemplate;
 
 
-	public AccountDao(JdbcTemplate jdbcTemplate) {
+	public BootAccountDao(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 

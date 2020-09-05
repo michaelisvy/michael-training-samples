@@ -11,9 +11,9 @@
 
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring-io-platform.version>Cairo-RELEASE</spring-io-platform.version>
+<!--		<spring-io-platform.version>Cairo-RELEASE</spring-io-platform.version>-->
 		<easymock.version>3.6</easymock.version>
-		<assertj.version>3.11.1</assertj.version>
+<!--		<assertj.version>3.11.1</assertj.version>-->
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -29,18 +29,12 @@
 
 	</build>
 
-	<dependencyManagement>
-		<!-- Import the maven Spring IO Platform Bill Of Materials (BOM) -->
-		<dependencies>
-			<dependency>
-				<groupId>io.spring.platform</groupId>
-				<artifactId>platform-bom</artifactId>
-				<version>${spring-io-platform.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
 	<dependencies>
 		<!-- ********************************************************************** 
@@ -107,10 +101,24 @@
 		    <scope>test</scope>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>commons-dbcp</groupId>-->
-<!--			<artifactId>commons-dbcp</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<!-- Runtime, com.sun.xml.bind module -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.2</version>
+		</dependency>
 	</dependencies>
 
 </project>

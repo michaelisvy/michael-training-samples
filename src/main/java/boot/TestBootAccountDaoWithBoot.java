@@ -20,15 +20,15 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ApplicationConfig.class)
 @ActiveProfiles("daoConfig")
-public class TestAccountDaoWithBoot {
+public class TestBootAccountDaoWithBoot {
 
-	private final Logger logger = LoggerFactory.getLogger(TestAccountDaoWithBoot.class);
+	private final Logger logger = LoggerFactory.getLogger(TestBootAccountDaoWithBoot.class);
 
 	@Autowired
-	private AccountService accountService;
+	private BootAccountService accountService;
 	
 	@Autowired
-	private AccountDao accountDao;
+	private BootAccountDao bootAccountDao;
 
 	@Autowired
 	private ConfigurableApplicationContext appContext;
@@ -54,7 +54,7 @@ public class TestAccountDaoWithBoot {
 		}
 		catch (RuntimeException exception) {}
 		// checks that the update on Dao1 was fine
-		assertThat(accountDao.findAccount(1).getCashBalance()).isCloseTo(500.0, within(0.0001));
+		assertThat(bootAccountDao.findAccount(1).getCashBalance()).isCloseTo(500.0, within(0.0001));
 
 
 	}
