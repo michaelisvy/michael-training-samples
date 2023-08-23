@@ -1,14 +1,13 @@
 package aop.pointcut.plus;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @ContextConfiguration(locations = "application-config.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringJUnitConfig
 public class PointcutTest { 
 	@Autowired 
 	private ServiceInterface serviceInterface;

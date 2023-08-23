@@ -1,7 +1,7 @@
 package config.xml.innerbean;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,7 +23,7 @@ public class InnerBeanTest {
 	    ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		try {
 			applicationContext.getBean(BankRepository.class);
-			Assert.fail("definition should not be available");
+			fail("definition should not be available");
 			
 		} catch (NoSuchBeanDefinitionException e) {
 			// expected
@@ -39,7 +39,7 @@ public class InnerBeanTest {
 	    ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(CONFIG_PATH);
 		try {
 			applicationContext.getBean("bankRepository");
-			Assert.fail("definition should not be available");
+			fail("definition should not be available");
 			
 		} catch (NoSuchBeanDefinitionException e) {
 			// expected

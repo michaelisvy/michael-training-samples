@@ -1,21 +1,23 @@
 package jpa.merge_or_persist;
 
 
+import jpa.Account;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 
-import jpa.Account;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:jpa/infra-config.xml")
+@SpringJUnitConfig
 public class JpaConfigTest {
 	
 	@PersistenceContext
@@ -30,7 +32,7 @@ public class JpaConfigTest {
 		account.setName("John");
 		entityManager.persist(account);
 		entityManager.flush();
-		Assert.assertNotEquals(account.getId(), 0);
+		Assertions.assertNotEquals(account.getId(), 0);
 		System.out.println("id: " + account.getId());
 	}
 	
@@ -44,7 +46,7 @@ public class JpaConfigTest {
 			account.setId(1234);
 			entityManager.persist(account);
 			entityManager.flush();
-			Assert.fail("should have thrown an exception");
+			fail("should have thrown an exception");
 		}
 		catch(PersistenceException e) {
 			// nothing here, expected behaviour
@@ -59,7 +61,7 @@ public class JpaConfigTest {
 		account.setName("John");
 		entityManager.merge(account);
 		entityManager.flush();
-		Assert.assertEquals(account.getId(), 0);		
+		assertEquals(account.getId(), 0);
 	}
 	
 	@Test @Transactional
@@ -70,7 +72,7 @@ public class JpaConfigTest {
 		account.setId(123422);
 		entityManager.merge(account);
 		entityManager.flush();
-		Assert.assertEquals(account.getId(), 123422);		
+		assertEquals(account.getId(), 123422);
 	}
 
 }

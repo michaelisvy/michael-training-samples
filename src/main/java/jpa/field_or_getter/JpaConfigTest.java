@@ -1,20 +1,20 @@
 package jpa.field_or_getter;
 
 
+import jpa.Account;
+import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import jpa.Account;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:jpa/infra-config.xml")
+@SpringJUnitConfig
 public class JpaConfigTest {
 	
 	@PersistenceContext
@@ -25,7 +25,7 @@ public class JpaConfigTest {
 	public void retrieveAccounts() {
 		Query query = entityManager.createQuery("from Account a where a.id=:id").setParameter("id", 1L);
 		Account a1 = (Account) query.getSingleResult();
-		Assert.assertEquals(a1.getId(), 1);
+		assertEquals(a1.getId(), 1);
 	}
 
 }

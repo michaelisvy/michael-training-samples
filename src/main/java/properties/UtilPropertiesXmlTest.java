@@ -1,17 +1,17 @@
 package properties;
 
-import java.util.Properties;
-
-import static org.assertj.core.api.Assertions.*;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import java.util.Properties;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ContextConfiguration(locations = "application-config.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringJUnitConfig
 public class UtilPropertiesXmlTest {
 	@Autowired
 	private ClientService clientService;

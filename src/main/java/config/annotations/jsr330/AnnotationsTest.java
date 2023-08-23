@@ -1,16 +1,16 @@
 package config.annotations.jsr330;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ContextConfiguration(locations = "annotations-config.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringJUnitConfig
 @DirtiesContext
 public class AnnotationsTest {
 	@Autowired
@@ -33,7 +33,7 @@ public class AnnotationsTest {
 		ClientService clientService1 = applicationContext.getBean(ClientService.class);
 		ClientService clientService2 = applicationContext.getBean(ClientService.class);
 		
-		Assert.assertEquals(clientService1, clientService2);
+		assertEquals(clientService1, clientService2);
 		
 	}
 

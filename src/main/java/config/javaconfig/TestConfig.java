@@ -1,18 +1,18 @@
 package config.javaconfig;
 
-import org.junit.Assert;
-
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestConfig {
 	private ApplicationContext applicationContext;
 	private ClientServiceImpl clientService1;
 	private ClientServiceImpl clientService2;
 	
-	@Before
+	@BeforeAll
 	public void loadContext() {
 		applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		clientService1 = (ClientServiceImpl) applicationContext.getBean("clientService1");
@@ -27,7 +27,7 @@ public class TestConfig {
 	 */	
 	@Test 
 	public void unicityTest() {
-		Assert.assertEquals(clientService1.clientDao, 
+		assertEquals(clientService1.clientDao,
 					clientService2.clientDao);
 	}
 	

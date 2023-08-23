@@ -1,6 +1,6 @@
 package config.xml.importtag;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ImportTagTest {

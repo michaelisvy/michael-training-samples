@@ -1,14 +1,14 @@
 package config.xml.properties;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ContextConfiguration("config-namespace.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringJUnitConfig
 public class ConfigNamespaceTest {
 	
 	@Autowired
@@ -16,7 +16,7 @@ public class ConfigNamespaceTest {
 	
 	@Test
 	public void testClassPath() {
-		Assert.assertTrue(clientService.getDbName().equals("dbName"));
+		assertTrue(clientService.getDbName().equals("dbName"));
 	}
 
 }

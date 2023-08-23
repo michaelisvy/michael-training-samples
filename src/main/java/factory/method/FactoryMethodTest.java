@@ -1,18 +1,17 @@
 package factory.method;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import factory.ClientService;
+import factory.ClientServiceSingleton;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import factory.ClientService;
-import factory.ClientServiceSingleton;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ContextConfiguration(locations = "factorymethod-config.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@SpringJUnitConfig
 public class FactoryMethodTest {
 	@Autowired
 	private ApplicationContext applicationContext;
@@ -24,7 +23,7 @@ public class FactoryMethodTest {
 	@Test
 	public void getBeanofSameTypeTest() {
 		ClientServiceFactoryMethod factory = (ClientServiceFactoryMethod) applicationContext.getBean("clientServiceFactoryMethod");
-		Assert.assertNotNull(factory);
+		assertNotNull(factory);
 
 	}
 
@@ -39,14 +38,14 @@ public class FactoryMethodTest {
 
 		ClientService clientService = null;
 		clientService = applicationContext.getBean(ClientService.class);
-		Assert.assertNotNull(clientService);
+		assertNotNull(clientService);
 
 	}
 	
 	@Test
 	public void checkDependenciesTest() {
 		ClientServiceSingleton clientService = applicationContext.getBean(ClientServiceSingleton.class);
-		Assert.assertNotNull(clientService.getClientDao());
+		assertNotNull(clientService.getClientDao());
 		
 
 		

@@ -1,8 +1,9 @@
 package java8.b_lambdas;
 
-import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @FunctionalInterface // a Functional interface can only have one abstract method
 interface BooleanComputer {

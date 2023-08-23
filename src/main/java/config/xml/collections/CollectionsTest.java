@@ -1,6 +1,6 @@
 package config.xml.collections;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -1,7 +1,7 @@
 package config.javaconfig.componentscan;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -9,7 +9,7 @@ public class TestConfig {
 	private ApplicationContext applicationContext;
 	private ClientService clientService;
 	
-	@Before
+	@BeforeAll
 	public void loadContext() {
 		applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		clientService = applicationContext.getBean(ClientService.class);

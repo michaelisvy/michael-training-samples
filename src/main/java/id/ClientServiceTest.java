@@ -1,17 +1,15 @@
 package id;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-
+@SpringJUnitConfig
 @ContextConfiguration(locations = {"client-service-config.xml"})
-@RunWith(SpringJUnit4ClassRunner.class)
 public class ClientServiceTest {
 	@Autowired
 	private ApplicationContext applicationContext;
@@ -22,9 +20,9 @@ public class ClientServiceTest {
 	@Test
 	public void dependencyInjectionTest() {
 		ClientService clientService = applicationContext.getBean(ClientService.class);
-		Assert.assertNotNull(clientService);
+		assertNotNull(clientService);
 		ClientDao clientDao = clientService.getClientDao();
-		Assert.assertNotNull(clientDao);
+		assertNotNull(clientDao);
 	}
 
 }
