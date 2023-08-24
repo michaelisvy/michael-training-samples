@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Created by isvym on 1/12/16.
  */
 @ContextConfiguration(classes = PropertiesConfig.class)
-
+@SpringJUnitConfig
 public class JavaConfigPropertiesTest {
 
     @Autowired

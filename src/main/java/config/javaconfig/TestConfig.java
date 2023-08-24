@@ -1,18 +1,20 @@
 package config.javaconfig;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringJUnitConfig
 public class TestConfig {
 	private ApplicationContext applicationContext;
 	private ClientServiceImpl clientService1;
 	private ClientServiceImpl clientService2;
 	
-	@BeforeAll
+	@BeforeEach
 	public void loadContext() {
 		applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 		clientService1 = (ClientServiceImpl) applicationContext.getBean("clientService1");

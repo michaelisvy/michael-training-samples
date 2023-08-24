@@ -1,11 +1,12 @@
 package web.rest;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -17,8 +18,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-@WebAppConfiguration // necessary for WebApplicationContext to be injected
-@ContextConfiguration(classes=RestControllerApplicationConfig.class)
+@SpringJUnitConfig(classes=RestControllerApplicationConfig.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 public class AccountRestControllerTest {
     
     @Autowired
@@ -26,7 +28,7 @@ public class AccountRestControllerTest {
     
     private MockMvc mockMvc;
     
-    @BeforeAll
+    @BeforeEach
     public void setup() {
         mockMvc = MockMvcBuilders.webAppContextSetup(this.applicationContext).build();
     }
