@@ -6,14 +6,19 @@ logging.level:
 
 ---
 # profile "injectedProperty" only
-spring.profiles: injectedProperty
+spring:
+  config:
+    activate:
+      on-profile: injectedProperty
 
 customproperty: customPropValue
 
 ---
 # profile "daoConfig" only
 spring:
-  profiles: daoConfig
+  config:
+    activate:
+      on-profile: daoConfig
 
   datasource:
     schema: classpath:/database/schema.sql

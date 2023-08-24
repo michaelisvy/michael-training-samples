@@ -1,13 +1,14 @@
 package config.annotations.jsr330;
 
-import javax.inject.Inject;
-import javax.inject.Named;
+
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
 @Named
 public class ClientService {
 	private ClientDao clientDao;
 	
-	@Inject 
+	@Inject
 	public void setClientDao(@Named("clientDao1") ClientDao clientDao) {
 		this.clientDao = clientDao;
 	}

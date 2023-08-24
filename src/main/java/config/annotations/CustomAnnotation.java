@@ -1,7 +1,6 @@
 package config.annotations;
 
-import javax.annotation.Resource;
-
+import jakarta.annotation.Resource;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional

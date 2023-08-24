@@ -1,6 +1,6 @@
 package config.annotations.postconstruct;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 public class Bean {
 	
